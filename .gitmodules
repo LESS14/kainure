@@ -1,3 +1,6 @@
 [submodule "deps/json"]
 	path = deps/json
 	url = https://github.com/nlohmann/json.git
+[submodule "deps/samp-sdk"]
+	path = deps/samp-sdk
+	url = https://github.com/aldergrounds/samp-sdk.git
