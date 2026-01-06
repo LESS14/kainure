@@ -31,7 +31,14 @@
  * ============================================================================ */
 
 declare function Float(value: number): any;
-declare function Ref<T = any>(initial_value?: T): {
+declare function Ref<T = any>(initial_value?: T, is_float_ref?: boolean): {
+    value: T;
+    readonly $: any;
+    valueOf(): T;
+    toString(): string;
+};
+
+declare function FloatRef<T = number>(initial_value?: T): {
     value: T;
     readonly $: any;
     valueOf(): T;
