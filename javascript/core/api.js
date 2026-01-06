@@ -39,7 +39,7 @@ const STANDARD_SIGNATURES = {
     'OnPlayerCommandText': 'is',      // playerid, cmdtext
     'OnPlayerText': 'is',             // playerid, text
     'OnRconLoginAttempt': 'sii',      // ip, password, success
-    'OnEnterExitModShop': 'ii',       // playerid, enterexit (sem string, mas comum)
+    'OnEnterExitModShop': 'ii',       // playerid, enterexit
     'OnPlayerClickPlayer': 'iii',     // playerid, clickedplayerid, source
 
     'OnPlayerTakeDamage': 'iifii',
@@ -114,7 +114,14 @@ globalThis.Ref = (initial_value = 0, is_float_ref = false) => {
     return obj;
 };
 
-globalThis.Float = (value) => Ref(value, true);
+globalThis.Float = (value) => {
+    const num = typeof value === 'number' ? value : Number(value);
+    
+    if (Number.isInteger(num))
+        return num + 1e-10; 
+        
+    return num;
+};
 globalThis.FloatRef = (initial_value = 0) => Ref(initial_value, true);
 
 globalThis.Public = (event_name, callback) => kainure.Public(event_name, callback);

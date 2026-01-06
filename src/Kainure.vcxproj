@@ -101,7 +101,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\deps;$(SolutionDir)..\..\deps\node\includes;$(SolutionDir)..\..\deps\node\includes\node;$(SolutionDir)..\..\deps\node\includes\uv;$(SolutionDir)..\..\deps\node\includes\v8;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\deps;$(SolutionDir)..\..\deps\node\includes;$(SolutionDir)..\..\deps\node\includes\node;$(SolutionDir)..\..\deps\node\includes\uv;$(SolutionDir)..\..\deps\node\includes\v8;$(SolutionDir)..\..\deps\samp-sdk;$(SolutionDir)..\..\deps\json\single_include\nlohmann;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
@@ -125,7 +125,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>
       </PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\..\deps;$(SolutionDir)..\..\deps\node\includes;$(SolutionDir)..\..\deps\node\includes\node;$(SolutionDir)..\..\deps\node\includes\uv;$(SolutionDir)..\..\deps\node\includes\v8;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\deps;$(SolutionDir)..\..\deps\node\includes;$(SolutionDir)..\..\deps\node\includes\node;$(SolutionDir)..\..\deps\node\includes\uv;$(SolutionDir)..\..\deps\node\includes\v8;$(SolutionDir)..\..\deps\samp-sdk;$(SolutionDir)..\..\deps\json\single_include\nlohmann;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Link>
