@@ -32,7 +32,7 @@
 
 #pragma once
 
-#include <vector>
+#include <cstdint>
 #include <memory>
 //
 #include "sdk/amx_defs.h"
@@ -52,9 +52,9 @@ class Type_Converter {
 
         struct Ref_Update_Data {
             v8::Local<v8::Object> parent;
-            cell* phys_addr;
-            Ref_Type type;
-            size_t size;
+            cell* phys_addr = nullptr;
+            Ref_Type type = Ref_Type::None;
+            size_t size = 0;
         };
 
         struct Conversion_Result {
