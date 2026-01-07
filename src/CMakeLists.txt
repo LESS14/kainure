@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 4.2)
 
 project(Kainure LANGUAGES CXX)
 
@@ -20,17 +20,12 @@ file(GLOB_RECURSE SOURCES
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
 target_compile_options(${PROJECT_NAME} PRIVATE
-    $<$<CXX_COMPILER_ID:GNU>:-m32 -fPIC -O3 -flto -msse2 -funroll-loops>
-    $<$<CXX_COMPILER_ID:Clang>:-m32 -fPIC -O3 -flto -msse2>
-    $<$<CXX_COMPILER_ID:MSVC>:/O2 /GL>
-)
-
-target_link_options(${PROJECT_NAME} PRIVATE
     -m32
-    -Wl,-rpath,'$ORIGIN/..'
-    $<$<CXX_COMPILER_ID:GNU>:-flto -O3>
-    $<$<CXX_COMPILER_ID:Clang>:-flto -O3>
-    $<$<CXX_COMPILER_ID:MSVC>:/LTCG>
+    -fPIC
+    -O3
+    -flto
+    -msse2
+    -funroll-loops
 )
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
@@ -49,7 +44,6 @@ target_include_directories(${PROJECT_NAME}
     SYSTEM PRIVATE
         ${DEPS_DIR}
         ${DEPS_DIR}/json/single_include
-        ${DEPS_DIR}/json/include
         ${DEPS_DIR}/samp-sdk
         ${NODE_INCLUDES_DIR}/node
         ${NODE_INCLUDES_DIR}/uv
@@ -65,6 +59,7 @@ find_library(NODE_LIB
 
 target_link_options(${PROJECT_NAME} PRIVATE
     -m32
+    -flto
     -Wl,-rpath,'$ORIGIN/..'
 )
 
